@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Control</title>
+		<meta charset="utf-8" author="Oladosu Moses">
+	    <link rel="stylesheet" type="text/css" href={% static "css/bootstrap-grid.css" %}>
+	    <link rel="stylesheet" type="text/css" href={% static "css/bootstrap.css" %}>
+	    {% block style %}{% endblock style %}
+        <script type="text/javascript" src={% static "js/jquery.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/bootstrap.bundle.min.js" %}></script>
+	    <script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/lazysizes.js" %}></script>
+        {% block script %}{% endblock script %}
+        <script>
+            var csrf_token = '{{ csrf_token }}'
+        </script>
+	</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

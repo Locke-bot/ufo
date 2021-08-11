@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href={% static "css/dashboard.css"%}>
+    <link rel="stylesheet" type="text/css" href={% static "css/jquery.bxslider.min.css"%}>
+    <style>
+        .nav-item:hover{
+            background-color: skyblue;
+        }
+        .slider{
+            width: 1050px;
+            overflow: hidden;
+            /*height: 441px;*/
+        }
+        .slider ul{
+            list-style: none;
+            width: auto;
+            /*height: 441px;*/
+            margin: 0;
+            padding: 0;
+        }
+        .slider li{
+            float: left;
+            width: 907.667px;
+            /*width: auto;*/
+            /*height: 441px;*/
+        } 
+    .button{
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        display: block;
+        padding: 6px;
+        border: 1px solid #ccc;
+        margin: 10px 0 0 0;
+    }
+    #rtt{
+        display: inline-block;
+        height: 100px;
+        width: 300px;
+    }
+    .back{
+        float: left;
+    }
+    .forward{
+        float: right;
+    }
+    .slider div{
+        text-align: center;
+    }
+    </style>
+{% endblock style %}
+{% block script %}
+    <script src={% static "js/jquery.bxslider.min.js" %}></script>
+    <script type="text/javascript" src={% static "js/ufo.js" %}></script>
+{% endblock script %}
+{% block content %}
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <!--<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>-->
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" style="background-color: darkgray;" href="#">
+            <img src={% static "images/ufo2.svg" %}></img>
+        </a>
+        <!--<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>-->
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" style="height: auto;">
+    </nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="sidebar-sticky pt-3">
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Dashboard</span>
+              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column">
+              {% for category in categories %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span data-feather="file"></span>
+                      {{category}}
+                    </a>
+                  </li>
+             {% endfor %}
+            </ul>
+    
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Updates!
+                </a>
+            </ul>
+          </div>
+        </nav>
+        
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div style="text-align: center;">
+        <div class="s">
+            <ul class="bxslider">
+                <li>
+                    <div>
+                        <h1 class="h2">Real Time Text</h1>
+                        <textarea id="rtt"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <div><h1 class="h2">Music Stream</h1>
+                        <p>This is the music stream text pane<p></div>
+                </li>
+                <li>
+                    <div><h1 class="h2">Movie Stream</h1>
+                        <p>This is the movie stream text pane<p></div>
+                </li>
+                <li>
+                    <div><h1 class="h2">File Transfer</h1>
+                        <p>This is the file transfer text pane<p></div>
+                </li>
+            </ul>
+        </div>
+        <!--<a href="#" class="button back">Back</a>
+        <a href="#" class="button forward">Forward</a>-->
+    </main>        
+  </div>
+</div>
+{% endblock content %}
