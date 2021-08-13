@@ -35,8 +35,8 @@
     }
     #rtt{
         display: inline-block;
-        height: 100px;
-        width: 300px;
+        height:400px;
+        width: 700px;
     }
     .back{
         float: left;
@@ -50,7 +50,7 @@
     </style>
 {% endblock style %}
 {% block script %}
-    <script src={% static "js/jquery.bxslider.min.js" %}></script>
+    <script src={% static "js/jquery.bxslider.js" %}></script>
     <script type="text/javascript" src={% static "js/ufo.js" %}></script>
 {% endblock script %}
 {% block content %}
@@ -107,7 +107,7 @@
                 <li>
                     <div>
                         <h1 class="h2">Real Time Text</h1>
-                        <textarea id="rtt"></textarea>
+                        <textarea id="rtt" placeholder="broadcast your texts in real time...for real!"></textarea>
                     </div>
                 </li>
                 <li>

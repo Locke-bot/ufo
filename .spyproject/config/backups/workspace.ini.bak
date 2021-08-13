@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['unchartered\\routing.py', 'unchartered\\consumers.py', 'bootstrap\\js\\ufo.js', 'storage.py', 'unchartered\\templates\\homepage.html', '..\\..\\ELDRIS\\ELDRIS\\ELDRIS\\bootstrap\\js\\test.js', '..\\..\\colors\\RAINBOW\\echo-client.py', '..\\..\\colors\\RAINBOW\\echo-server.py', '..\\..\\colors\\RAINBOW\\echo-server2.py']
+recent_files = ['unchartered\\consumers.py', 'bootstrap\\js\\ufo.js', 'storage.py', 'unchartered\\templates\\homepage.html', '..\\..\\ELDRIS\\ELDRIS\\ELDRIS\\bootstrap\\js\\test.js']
 

@@ -5,6 +5,7 @@ $(function(){
         ttsSocket.send(JSON.stringify({'msg': key}));        
     })
     let navel = $(".nav-link")
+    let ul = $("ul.bxslider")
     navel.click(function(){
         $(".nav-link").removeClass("active");
         $(this).addClass("active");
@@ -14,6 +15,8 @@ $(function(){
     $('.bxslider').bxSlider({
         onSlideBefore: function(a, b, c){
             navel[c].click()
+            console.log(b)
+            $(ul.children().not(".bx-clone")[b]).find("textarea, button, a").blur()
         },
         
         onSliderLoad: function(a){
